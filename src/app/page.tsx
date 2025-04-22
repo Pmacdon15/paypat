@@ -2,7 +2,6 @@ import ContentContainer from "@/components/ui/containers/content-container";
 import PageContainer from "@/components/ui/containers/page-container";
 import PaymentForm from "@/components/ui/forms/payment-form";
 import Link from "next/link";
-// import PaymentButton from "@/components/ui/payment-button"; 
 
 export default function Home() {
   return (
@@ -11,7 +10,7 @@ export default function Home() {
         <h1 className="text-2xl">
           Easily make a payment to Patrick MacDonald
         </h1>
-        <PaymentForm />
+        <PaymentForm />        
         <TOSPP />
       </ContentContainer>
     </PageContainer>
