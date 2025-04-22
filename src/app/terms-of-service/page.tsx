@@ -1,9 +1,16 @@
+import ContentContainer from "@/components/ui/containers/content-container";
+import PageContainer from "@/components/ui/containers/page-container";
+import Link from "next/link";
+
 export default function page() {
     return (
-        <div className="flex flex-col justify-between p-4 bg-white/20 backdrop-blur-md w-5/6 mt-8 border shadow-2xl h-4/6 text-center rounded-xl border-b border-white/10">
-            <h1 className="text-2xl">
-                Terms of service
-            </h1>
-        </div>
+        <PageContainer>
+            <ContentContainer>
+                <h1 className="text-2xl">
+                    Terms of service
+                </h1>
+                <Link href='/'>Go Home</Link>
+            </ContentContainer>
+        </PageContainer>
     );
 };
