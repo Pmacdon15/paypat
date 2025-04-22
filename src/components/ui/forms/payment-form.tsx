@@ -35,32 +35,35 @@ export default function PaymentForm() {
             >
                 Confirm Payment Amount
             </button>
-            {showPaymentButton && (
+            <div
+                className={`transition-all duration-500 ease-in-out ${showPaymentButton ? 'opacity-100 visible' : 'opacity-0 invisible'
+                    }`}
+            >
                 <PaymentButton
                     amount={amount}
                     invoice={invoice}
                     customerName={customerName}
                 />
-            )}
+            </div>
         </div>
     );
 }
 
 function Inputs({ name, type, placeholder, required = false, ref }: {
-  name: string;
-  type: string;
-  placeholder: string;
-  required?: boolean;
-  ref: React.RefObject<HTMLInputElement | null>
+    name: string;
+    type: string;
+    placeholder: string;
+    required?: boolean;
+    ref: React.RefObject<HTMLInputElement | null>
 }) {
-  return (
-    <input
-      name={name}
-      type={type}
-      placeholder={placeholder}
-      className="border p-2 bg-white/20 text-white rounded-sm"
-      required={required}
-      ref={ref}
-    />
-  );
+    return (
+        <input
+            name={name}
+            type={type}
+            placeholder={placeholder}
+            className="border p-2 bg-white/20 text-white rounded-sm"
+            required={required}
+            ref={ref}
+        />
+    );
 }
