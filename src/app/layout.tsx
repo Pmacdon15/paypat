@@ -28,7 +28,7 @@ export default function RootLayout({
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
-        <div className="flex flex-col items-center justify-items-center w-full min-h-screen pb-20 font-[family-name:var(--font-geist-sans)] bg-[url('/background1.jpg')] bg-cover bg-center">
+        <div className="flex flex-col items-center justify-items-center w-full min-h-screen font-[family-name:var(--font-geist-sans)] bg-[url('/background1.jpg')] bg-cover bg-center">
           <Header />
           {children}
         </div>
