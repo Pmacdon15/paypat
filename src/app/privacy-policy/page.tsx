@@ -1,7 +1,7 @@
 export default function page() {
-  return (
-    <>
-    test
-    </>
-  );
+    return (
+        <>
+            test
+        </>
+    );
 };
