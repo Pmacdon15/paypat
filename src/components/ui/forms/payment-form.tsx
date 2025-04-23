@@ -6,16 +6,16 @@ import PaymentButton from '../payment-button';
 export default function PaymentForm() {
     const [showPaymentButton, setShowPaymentButton] = useState(false);
     const [amount, setAmount] = useState(0);
-    const [invoice, setInvoice] = useState(0);
+    const [phoneNumber, setphoneNumber] = useState(0);
     const [customerName, setCustomerName] = useState("");
     const amountRef = useRef<HTMLInputElement>(null);
-    const invoiceRef = useRef<HTMLInputElement>(null);
+    const phoneNumberRef = useRef<HTMLInputElement>(null);
     const customerNameRef = useRef<HTMLInputElement>(null);
 
     const handleConfirmPayment = () => {
         if (amountRef.current?.value && customerNameRef.current?.value) {
             setAmount(parseFloat(amountRef.current.value));
-            setInvoice(parseFloat(invoiceRef.current?.value || "0"));
+            setphoneNumber(parseFloat(phoneNumberRef.current?.value || "0"));
             setCustomerName(customerNameRef.current.value);
             setShowPaymentButton(true);
         } else {
@@ -28,7 +28,7 @@ export default function PaymentForm() {
             <h1 className="text-lg text-white">Payment Form</h1>
             <Inputs name="customer-name" type="text" placeholder="Customer Name" required={true} ref={customerNameRef} />
             <Inputs name="amount" type="number" placeholder="Amount to pay" required={true} ref={amountRef} />
-            <Inputs name="invoice" type="number" placeholder="Invoice number (not required)" ref={invoiceRef} />
+            <Inputs name="phoneNumber" type="number" placeholder="Phone Number(not required)" ref={phoneNumberRef} />
             <button
                 className="border rounded-sm p-1 bg-white/20 text-white"
                 onClick={handleConfirmPayment}
@@ -41,7 +41,7 @@ export default function PaymentForm() {
             >
                 <PaymentButton
                     amount={amount}
-                    invoice={invoice}
+                    phoneNumber={phoneNumber}
                     customerName={customerName}
                 />
             </div>
