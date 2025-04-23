@@ -37,8 +37,8 @@ export async function processPayment(
 
         console.log("PaymentIntent created: ", paymentIntent.id);
         return { success: true, paymentIntent };
-    } catch (error: any) {
+    } catch (error) {
         console.error("Stripe error: ", error);
-        return { success: false, error: error.message };
+        return { success: false, error: error };
     }
 }
